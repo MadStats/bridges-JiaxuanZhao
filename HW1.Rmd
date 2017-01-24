@@ -1,0 +1,28 @@
+---
+title: "HW1"
+output: html_document
+---
+
+```{r Load file}
+library(acs)
+
+```
+
+```{r, echo=FALSE, error=FALSE, message=FALSE, warning=FALSE}
+data1995 = read.csv("full1995.txt")
+data2000 = read.csv("full2000.txt")
+data2015 = read.csv("full2015.txt")
+
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+fips95 = data1995[, 9] 
+decCond95 = data1995[, 67]
+supCond95 = data1995[, 68]
+subCond95 = data1995[, 69]
+year95 = rep("1995", time = 467,682)
+strucID95 = data1995[, 2]
+
+```
+
