@@ -17,12 +17,22 @@ data2015 = read.csv("full2015.txt")
 
 
 ```{r, message=FALSE, warning=FALSE}
-fips95 = data1995[, 9] 
-decCond95 = data1995[, 67]
-supCond95 = data1995[, 68]
-subCond95 = data1995[, 69]
-year95 = rep("1995", time = 467,682)
-strucID95 = data1995[, 2]
+fips = c(data1995[, 9], data2000[, 9], data2015[, 9]) 
+decCond = c(data1995[, 67],data2000[, 67],data2015[, 67])
+supCond = c(data1995[, 68],data2000[, 68],data2015[, 68])
+subCond = c(data1995[, 69],data2000[, 69],data2015[, 69])
+evalYear = c(rep("1995", time = 467682),rep("2000", time = 380424),rep("2015", time = 302824))
+yearBuilt = c(data1995[, 27],data2000[, 27],data2015[, 27])
+strucID = c(data1995[, 2],data2000[, 2],data2015[, 2])
+traff = c(data1995[, 30],data2000[, 30],data2015[, 30]) # num of viechles in a day
+history = c(data1995[, 41],data2000[, 41],data2015[, 41]) # historical sig 
+material = c(data1995[, 48],data2000[, 48],data2015[, 48])
+strLength = c(data1995[, 56],data2000[, 56],data2015[, 56]) # length of bridge
+totalCost = c(data1995[, 95],data2000[, 95],data2015[, 95])
+
+dataComb = data.frame(yearBuilt, fips, decCond,supCond,subCond,evalYear,strucID,traff,history,material,strLength, totalCost)
+
+
 
 ```
 
